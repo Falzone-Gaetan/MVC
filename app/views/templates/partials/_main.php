@@ -10,7 +10,7 @@
 
                 <!-- .col-md-8 -->
                 <div class="col-lg-4 sidebar pl-lg-5 ftco-animate">
-                <?php include '../app/vues/template/partials/_aside.php'; ?>
+                <?php include '../app/views/templates/partials/_aside.php'; ?>
                 </div>
 
     </div>
