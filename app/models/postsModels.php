@@ -2,7 +2,7 @@
 
 
 
-namespace app\models\postsModels;
+namespace App\Models\PostsModels;
 
 function findAll(\PDO $connexion) :array {
     $sql = "SELECT *

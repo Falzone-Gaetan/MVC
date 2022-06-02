@@ -7,16 +7,26 @@
             <div class="">
             <?php echo $post['content'];?>
             </div>
+
         
 <?php
 include_once '../app/models/tagsModels.php';
-$tags = findAllByPostsId($connexion, $post['id']);
+$tags = \App\Models\TagsModels\findAllByPostsId($connexion, $post['id']);
 include '../app/views/tags/_indexByPostId.php';
 
 ?>
+
+
 <?php
+ 
 include_once '../app/models/authorsModels.php';
-$authors = findAllByPostsId($connexion, $post['id']);
-include '../app/views/authors/_indexByPostId.php';
+$author = \App\Models\AuthorsModels\findOneById($connexion, $post['author_id']);
+include '../app/views/authors/_shows.php';
 
 ?>
+
+
+
+
+        
+

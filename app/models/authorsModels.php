@@ -1,16 +1,15 @@
 <?php
 
+namespace App\Models\AuthorsModels;
 
-
-function findAllByPostsId(\PDO $connexion, int $postID) {
+function findOneById(\PDO $connexion, int $id)  {
     $sql = "SELECT *
-            FROM authors a
-            JOIN posts p ON a.id = p.authors_id
-            WHERE p.id = :postID";
+            FROM authors
+            WHERE id = :id;";
     $rs = $connexion->prepare($sql);
-    $rs->bindValue(':postID', $postID, \PDO::PARAM_INT);
+    $rs->bindValue(':id', $id,\PDO::PARAM_INT);
     $rs->execute();
-    return $rs->fetchAll(\PDO::FETCH_ASSOC);
+    return $rs->fetch(\PDO::FETCH_ASSOC);
 }
 
 ?>
