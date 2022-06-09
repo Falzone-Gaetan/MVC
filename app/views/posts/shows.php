@@ -25,6 +25,17 @@ include '../app/views/authors/_shows.php';
 
 ?>
 
+<?php
+ 
+include_once '../app/models/commentsModels.php';
+$comments = \App\Models\commentsModels\findAllByPostsId($connexion, $post['id']);
+include '../app/views/comments/_indexByPostId.php';
+
+?>
+
+
+
+
 
 
 
